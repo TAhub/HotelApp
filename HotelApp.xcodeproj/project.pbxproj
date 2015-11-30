@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		E4E761601C0CF05600DBC38A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E7615F1C0CF05600DBC38A /* main.m */; };
 		E4E761631C0CF05600DBC38A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761621C0CF05600DBC38A /* AppDelegate.m */; };
-		E4E761661C0CF05600DBC38A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761651C0CF05600DBC38A /* ViewController.m */; };
-		E4E761691C0CF05600DBC38A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E761671C0CF05600DBC38A /* Main.storyboard */; };
 		E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */; };
 		E4E7616E1C0CF05600DBC38A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4E7616D1C0CF05600DBC38A /* Assets.xcassets */; };
 		E4E761711C0CF05600DBC38A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4E7616F1C0CF05600DBC38A /* LaunchScreen.storyboard */; };
@@ -21,9 +19,6 @@
 		E4E7615F1C0CF05600DBC38A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4E761611C0CF05600DBC38A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4E761621C0CF05600DBC38A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E4E761641C0CF05600DBC38A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E4E761651C0CF05600DBC38A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E4E761681C0CF05600DBC38A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4E7616B1C0CF05600DBC38A /* HotelApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotelApp.xcdatamodel; sourceTree = "<group>"; };
 		E4E7616D1C0CF05600DBC38A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4E761701C0CF05600DBC38A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,15 +55,8 @@
 		E4E7615D1C0CF05600DBC38A /* HotelApp */ = {
 			isa = PBXGroup;
 			children = (
-				E4E761611C0CF05600DBC38A /* AppDelegate.h */,
-				E4E761621C0CF05600DBC38A /* AppDelegate.m */,
-				E4E761641C0CF05600DBC38A /* ViewController.h */,
-				E4E761651C0CF05600DBC38A /* ViewController.m */,
-				E4E761671C0CF05600DBC38A /* Main.storyboard */,
-				E4E7616D1C0CF05600DBC38A /* Assets.xcassets */,
-				E4E7616F1C0CF05600DBC38A /* LaunchScreen.storyboard */,
-				E4E761721C0CF05600DBC38A /* Info.plist */,
-				E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */,
+				E4E761791C0CF12C00DBC38A /* Model */,
+				E4E761781C0CF12800DBC38A /* Controller */,
 				E4E7615E1C0CF05600DBC38A /* Supporting Files */,
 			);
 			path = HotelApp;
@@ -77,9 +65,29 @@
 		E4E7615E1C0CF05600DBC38A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E4E761721C0CF05600DBC38A /* Info.plist */,
 				E4E7615F1C0CF05600DBC38A /* main.m */,
+				E4E7616D1C0CF05600DBC38A /* Assets.xcassets */,
+				E4E7616F1C0CF05600DBC38A /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4E761781C0CF12800DBC38A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E4E761611C0CF05600DBC38A /* AppDelegate.h */,
+				E4E761621C0CF05600DBC38A /* AppDelegate.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E4E761791C0CF12C00DBC38A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +149,6 @@
 			files = (
 				E4E761711C0CF05600DBC38A /* LaunchScreen.storyboard in Resources */,
 				E4E7616E1C0CF05600DBC38A /* Assets.xcassets in Resources */,
-				E4E761691C0CF05600DBC38A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +159,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E761661C0CF05600DBC38A /* ViewController.m in Sources */,
 				E4E761631C0CF05600DBC38A /* AppDelegate.m in Sources */,
 				E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */,
 				E4E761601C0CF05600DBC38A /* main.m in Sources */,
@@ -162,14 +168,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E4E761671C0CF05600DBC38A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E4E761681C0CF05600DBC38A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E4E7616F1C0CF05600DBC38A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
