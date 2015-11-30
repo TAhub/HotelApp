@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Hotels.plist
+   HotelApp
+
+   Created by Theodore Abshire on 11/30/15.
+   Copyright (c) 2015 TheodoreAbshire. All rights reserved.
+-->
+<plist version="1.0">
+<dict>
+	<key>Family Stay Inn</key>
+	<dict>
+		<key>location</key> <string>Missouri or something</string>
+		<key>stars</key> <integer>6</integer>
+		<key>rooms</key>
+		<array>
+			<dict>
+				<key>name</key> <string>Veranda Room</string>
+				<key>beds</key> <integer>2</integer>
+				<key>cost</key> <integer>70</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Standard Room</string>
+				<key>beds</key> <integer>2</integer>
+				<key>cost</key> <integer>50</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Standard Room</string>
+				<key>beds</key> <integer>2</integer>
+				<key>cost</key> <integer>50</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Big Room</string>
+				<key>beds</key> <integer>4</integer>
+				<key>cost</key> <integer>100</integer>
+			</dict>
+		</array>
+	</dict>
+	<key>SleepCube Facility #74</key>
+	<dict>
+		<key>location</key> <string>Hell</string>
+		<key>stars</key> <integer>3</integer>
+		<key>rooms</key>
+		<array>
+			<dict>
+				<key>name</key> <string>Normal SleepCube</string>
+				<key>beds</key> <integer>1</integer>
+				<key>cost</key> <integer>15</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Normal SleepCube</string>
+				<key>beds</key> <integer>1</integer>
+				<key>cost</key> <integer>15</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Normal SleepCube</string>
+				<key>beds</key> <integer>1</integer>
+				<key>cost</key> <integer>15</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Family SleepCube</string>
+				<key>beds</key> <integer>3</integer>
+				<key>cost</key> <integer>35</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Family SleepCube</string>
+				<key>beds</key> <integer>3</integer>
+				<key>cost</key> <integer>35</integer>
+			</dict>
+			<dict>
+				<key>name</key> <string>Deluxe SleepCube</string>
+				<key>beds</key> <integer>2</integer>
+				<key>cost</key> <integer>60</integer>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>

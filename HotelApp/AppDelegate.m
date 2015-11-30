@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MainMenuViewController.h"
+#import "Hotel.h"
+#import "Room.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +25,61 @@
 	[self.window makeKeyAndVisible];
 	
 	//make a root view controller
+	MainMenuViewController *root = [MainMenuViewController new];
+	
+	//make the navigation controller
+	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:root];
+	nav.navigationBarHidden = true;
+	self.window.rootViewController = nav;
+	
 	
 	return YES;
+}
+
+- (void)initialDatabaseConfig
+{
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+	
+	NSError *error;
+	NSInteger count = [self.managedObjectContext countForFetchRequest:request error:&error];
+	
+	if (count == 0)
+	{
+		//load up the data plist
+		NSString *path = [[NSBundle mainBundle] pathForResource:@"Hotels" ofType:@"plist"];
+		NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+		
+		for (id name in dict)
+		{
+			Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+			NSDictionary *hotelDict = dict[name];
+			
+			hotel.name = name;
+			hotel.location = hotelDict[@"location"];
+			hotel.stars = hotelDict[@"stars"];
+			
+			NSArray *rooms = hotelDict[@"rooms"];
+			for (int i = 0; i < rooms.count; i++)
+			{
+				Room *room = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+				NSDictionary *roomDict = rooms[i];
+				
+				room.name = roomDict[@"name"];
+				room.hotel = hotel;
+				room.beds = roomDict[@"beds"];
+				room.cost = roomDict[@"cost"];
+			}
+		}
+		
+		
+		//save the data
+		NSError *saveError;
+		BOOL isSaved = [self.managedObjectContext save:&saveError];
+		if (isSaved)
+			NSLog(@"Saved default data.");
+		else
+			NSLog(@"Failed to save default data.");
+	}
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
