@@ -174,7 +174,7 @@
 		}
 		
 		//advance to the next day
-		dateOn = [dateOn dateByAddingTimeInterval:24*60*60];
+		dateOn = [[NSCalendar currentCalendar] dateByAddingUnit:NSCalendarUnitDay value:1 toDate:dateOn options:0];
 	}
 	
 	if (startDate != nil)
@@ -210,13 +210,30 @@
 {
 	for (Reservation *res in self.room.reservations)
 	{
-		if ([res.endTime compare:start] != NSOrderedAscending || //if the reservation doesn't end before you start
-			[res.startTime compare:end] != NSOrderedDescending) //if the reservation doesn't start after you end
+		if ([self date:start isBetweenDate:res.startTime andDate:res.endTime] ||
+			[self date:end isBetweenDate:res.startTime andDate:res.endTime])
 		{
 			return res;
 		}
 	}
 	return nil;
+}
+
+- (BOOL)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate
+{
+	//thanks to
+	//http://stackoverflow.com/questions/1072848/how-to-check-if-an-nsdate-occurs-between-two-other-nsdates
+	//because I got really confused using the array-sort compare to figure out if one date was before another
+	//which is, uh, not what it's supposed to do
+	//but that seems to be the only easy way to compare...
+	
+	if ([date compare:beginDate] == NSOrderedAscending)
+	return NO;
+
+	if ([date compare:endDate] == NSOrderedDescending)
+	return NO;
+
+	return YES;
 }
 
 @end
