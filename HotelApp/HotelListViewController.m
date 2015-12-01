@@ -39,7 +39,15 @@
 		return d;
 	};
 	
-	
+	__weak typeof(self) weakSelf = self;
+	self.selectCell = ^void(NSObject *object)
+	{
+		Hotel *hotel = (Hotel *)object;
+		RoomsListViewController *rlvc = [RoomsListViewController new];
+		rlvc.hotel = hotel;
+		
+		[weakSelf.navigationController pushViewController:rlvc animated:YES];
+	};
 	
 	self.setupCell = ^void(UITableViewCell* cell, NSObject *object)
 	{

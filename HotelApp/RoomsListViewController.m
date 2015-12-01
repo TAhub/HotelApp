@@ -9,6 +9,7 @@
 #import "RoomsListViewController.h"
 #import "AppDelegate.h"
 #import "Room.h"
+#import "Constants.h"
 
 @interface RoomsListViewController ()
 
@@ -20,29 +21,21 @@
 {
 	[super loadView];
 	
+	NSArray *rooms = [self.hotel.rooms allObjects];
 	self.fetchData = ^NSArray*(void)
 	{
-		//retrieve data from coredata
-		AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-		NSManagedObjectContext *context = delegate.managedObjectContext;
-		NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
-		
-		NSError *fetchError;
-		NSArray *d = [context executeFetchRequest:request error:&fetchError];
-		if (fetchError)
-		{
-			NSLog(@"Error fetching hotel data!");
-		}
-		
-		return d;
+		return rooms;
 	};
 	
-	
+	self.selectCell = ^void(NSObject *object)
+	{
+		//TODO: do something
+	};
 	
 	self.setupCell = ^void(UITableViewCell* cell, NSObject *object)
 	{
-		Hotel *hotel = (Hotel *)object;
-		cell.textLabel.text = hotel.name;
+		Room *room = (Room *)object;
+		cell.textLabel.text = room.name;
 	};
 	
 	[self setUpWithColor:BROWSE_COLOR];
