@@ -10,7 +10,6 @@
 #import "Constants.h"
 #import "AppDelegate.h"
 #import "Hotel.h"
-#import "RoomsListViewController.h"
 
 @interface HotelListViewController ()
 
@@ -43,10 +42,10 @@
 	self.selectCell = ^void(NSObject *object)
 	{
 		Hotel *hotel = (Hotel *)object;
-		RoomsListViewController *rlvc = [RoomsListViewController new];
-		rlvc.hotel = hotel;
+		CustomListViewControllerWithHotel *vc = [weakSelf.nextVC new];
+		vc.hotel = hotel;
 		
-		[weakSelf.navigationController pushViewController:rlvc animated:YES];
+		[weakSelf.navigationController pushViewController:vc animated:YES];
 	};
 	
 	self.setupCell = ^void(UITableViewCell* cell, NSObject *object)
@@ -55,7 +54,7 @@
 		cell.textLabel.text = hotel.name;
 	};
 	
-	[self setUpWithColor:BROWSE_COLOR];
+	[self setUpWithColor:self.color];
 }
 
 @end

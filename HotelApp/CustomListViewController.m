@@ -49,10 +49,10 @@
 	[self.view addSubview:backButton];
 	
 	//add constraints
-	NSDictionary *buttons = NSDictionaryOfVariableBindings(table, backButton);
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[backButton]-|" options:0 metrics:nil views:buttons]];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[table]-|" options:0 metrics:nil views:buttons]];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[table][backButton]-|" options:0 metrics:nil views:buttons]];
+	NSDictionary *views = NSDictionaryOfVariableBindings(table, backButton);
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[backButton]-|" options:0 metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[table]-|" options:0 metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[table][backButton]-|" options:0 metrics:nil views:views]];
 	
 	//add button targets
 	[backButton addTarget:self action:@selector(backButton:) forControlEvents:UIControlEventTouchUpInside];

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E42A55B71C0E405E00E3164E /* CustomListViewControllerWithHotel.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A55B61C0E405E00E3164E /* CustomListViewControllerWithHotel.m */; };
+		E42A55BA1C0E42BE00E3164E /* BookRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A55B91C0E42BE00E3164E /* BookRoomViewController.m */; };
+		E42A55BE1C0E444B00E3164E /* BookRoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A55BD1C0E444B00E3164E /* BookRoomDetailViewController.m */; };
 		E4E761601C0CF05600DBC38A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E7615F1C0CF05600DBC38A /* main.m */; };
 		E4E761631C0CF05600DBC38A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761621C0CF05600DBC38A /* AppDelegate.m */; };
 		E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */; };
@@ -28,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E42A55B51C0E405100E3164E /* CustomListViewControllerWithHotel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomListViewControllerWithHotel.h; sourceTree = "<group>"; };
+		E42A55B61C0E405E00E3164E /* CustomListViewControllerWithHotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomListViewControllerWithHotel.m; sourceTree = "<group>"; };
+		E42A55B91C0E42BE00E3164E /* BookRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRoomViewController.m; sourceTree = "<group>"; };
+		E42A55BB1C0E42C900E3164E /* BookRoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookRoomViewController.h; sourceTree = "<group>"; };
+		E42A55BC1C0E444B00E3164E /* BookRoomDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRoomDetailViewController.h; sourceTree = "<group>"; };
+		E42A55BD1C0E444B00E3164E /* BookRoomDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRoomDetailViewController.m; sourceTree = "<group>"; };
 		E4E7615B1C0CF05600DBC38A /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E7615F1C0CF05600DBC38A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4E761611C0CF05600DBC38A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -75,6 +84,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E42A55B21C0E3F2A00E3164E /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				E42A55BC1C0E444B00E3164E /* BookRoomDetailViewController.h */,
+				E42A55BD1C0E444B00E3164E /* BookRoomDetailViewController.m */,
+				E42A55BB1C0E42C900E3164E /* BookRoomViewController.h */,
+				E42A55B91C0E42BE00E3164E /* BookRoomViewController.m */,
+			);
+			name = Book;
+			sourceTree = "<group>";
+		};
+		E42A55B31C0E3F4300E3164E /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				E4E761A41C0D202100DBC38A /* RoomsListViewController.h */,
+				E4E761A51C0D202E00DBC38A /* RoomsListViewController.m */,
+			);
+			name = Browse;
+			sourceTree = "<group>";
+		};
+		E42A55B41C0E3F4700E3164E /* Lookup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lookup;
+			sourceTree = "<group>";
+		};
+		E42A55B81C0E406100E3164E /* General */ = {
+			isa = PBXGroup;
+			children = (
+				E4E761A11C0D1B1200DBC38A /* CustomListViewController.h */,
+				E4E761A21C0D1B1200DBC38A /* CustomListViewController.m */,
+				E42A55B51C0E405100E3164E /* CustomListViewControllerWithHotel.h */,
+				E42A55B61C0E405E00E3164E /* CustomListViewControllerWithHotel.m */,
+				E4E7619D1C0D145C00DBC38A /* HotelListViewController.h */,
+				E4E7619E1C0D145C00DBC38A /* HotelListViewController.m */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
 		E4E761521C0CF05600DBC38A = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +166,10 @@
 			isa = PBXGroup;
 			children = (
 				E4E761A01C0D1A8900DBC38A /* Constants.h */,
-				E4E761A11C0D1B1200DBC38A /* CustomListViewController.h */,
-				E4E761A21C0D1B1200DBC38A /* CustomListViewController.m */,
-				E4E761A41C0D202100DBC38A /* RoomsListViewController.h */,
-				E4E761A51C0D202E00DBC38A /* RoomsListViewController.m */,
-				E4E7619D1C0D145C00DBC38A /* HotelListViewController.h */,
-				E4E7619E1C0D145C00DBC38A /* HotelListViewController.m */,
+				E42A55B81C0E406100E3164E /* General */,
+				E42A55B21C0E3F2A00E3164E /* Book */,
+				E42A55B41C0E3F4700E3164E /* Lookup */,
+				E42A55B31C0E3F4300E3164E /* Browse */,
 				E4E7617A1C0CF7FD00DBC38A /* MainMenuViewController.h */,
 				E4E7617B1C0CF7FD00DBC38A /* MainMenuViewController.m */,
 				E4E761611C0CF05600DBC38A /* AppDelegate.h */,
@@ -228,6 +275,7 @@
 				E4E7618E1C0D0B8B00DBC38A /* Reservation.m in Sources */,
 				E4E7617C1C0CF7FD00DBC38A /* MainMenuViewController.m in Sources */,
 				E4E761911C0D0B8B00DBC38A /* Guest+CoreDataProperties.m in Sources */,
+				E42A55BE1C0E444B00E3164E /* BookRoomDetailViewController.m in Sources */,
 				E4E761931C0D0B8B00DBC38A /* Room+CoreDataProperties.m in Sources */,
 				E4E761631C0CF05600DBC38A /* AppDelegate.m in Sources */,
 				E4E7619B1C0D104F00DBC38A /* Hotel+CoreDataProperties.m in Sources */,
@@ -237,8 +285,10 @@
 				E4E761941C0D0B8B00DBC38A /* Room.m in Sources */,
 				E4E7619F1C0D145C00DBC38A /* HotelListViewController.m in Sources */,
 				E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */,
+				E42A55B71C0E405E00E3164E /* CustomListViewControllerWithHotel.m in Sources */,
 				E4E761921C0D0B8B00DBC38A /* Guest.m in Sources */,
 				E4E7618D1C0D0B8B00DBC38A /* Reservation+CoreDataProperties.m in Sources */,
+				E42A55BA1C0E42BE00E3164E /* BookRoomViewController.m in Sources */,
 				E4E761601C0CF05600DBC38A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +430,7 @@
 				E4E761771C0CF05600DBC38A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

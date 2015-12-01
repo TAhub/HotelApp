@@ -6,8 +6,11 @@
 //  Copyright © 2015 TheodoreAbshire. All rights reserved.
 //
 
-#import "CustomListViewController.h"
+#import "CustomListViewControllerWithHotel.h"
 
 @interface HotelListViewController : CustomListViewController
+
+@property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) Class nextVC;
 
 @end

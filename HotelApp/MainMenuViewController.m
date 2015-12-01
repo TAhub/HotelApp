@@ -8,7 +8,9 @@
 
 #import "MainMenuViewController.h"
 #import "HotelListViewController.h"
+#import "RoomsListViewController.h"
 #import "Constants.h"
+#import "BookRoomViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -54,12 +56,18 @@
 
 -(void)browseButton:(UIButton *)sender
 {
-	[self.navigationController pushViewController:[HotelListViewController new] animated:YES];
+	HotelListViewController *hlvc = [HotelListViewController new];
+	hlvc.color = BROWSE_COLOR;
+	hlvc.nextVC = [RoomsListViewController class];
+	[self.navigationController pushViewController:hlvc animated:YES];
 }
 
 -(void)bookButton:(UIButton *)sender
 {
-	
+	HotelListViewController *hlvc = [HotelListViewController new];
+	hlvc.color = BOOK_COLOR;
+	hlvc.nextVC = [BookRoomViewController class];
+	[self.navigationController pushViewController:hlvc animated:YES];
 }
 
 -(void)lookupButton:(UIButton *)sender

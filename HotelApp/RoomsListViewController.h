@@ -6,11 +6,8 @@
 //  Copyright © 2015 TheodoreAbshire. All rights reserved.
 //
 
-#import "CustomListViewController.h"
-#import "Hotel.h"
+#import "CustomListViewControllerWithHotel.h"
 
-@interface RoomsListViewController : CustomListViewController
-
-@property (weak, nonatomic) Hotel *hotel;
+@interface RoomsListViewController : CustomListViewControllerWithHotel
 
 @end
