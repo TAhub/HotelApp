@@ -7,6 +7,8 @@
 //
 
 #import "MainMenuViewController.h"
+#import "HotelListViewController.h"
+#import "Constants.h"
 
 @interface MainMenuViewController ()
 
@@ -26,9 +28,9 @@
 	UIButton *lookup = [UIButton new];
 	
 	//configure the buttons
-	[self configureButton:browse title:@"Browse" color:[UIColor colorWithRed:1.0 green:1.0 blue:0.8 alpha:1.0]];
-	[self configureButton:book title:@"Book" color:[UIColor colorWithRed:1.0 green:0.8 blue:1.0 alpha:1.0]];
-	[self configureButton:lookup title:@"Look Up" color:[UIColor colorWithRed:0.8 green:1.0 blue:1.0 alpha:1.0]];
+	[self configureButton:browse title:@"Browse" color:BROWSE_COLOR];
+	[self configureButton:book title:@"Book" color:BOOK_COLOR];
+	[self configureButton:lookup title:@"Look Up" color:LOOKUP_COLOR];
 	
 	//add views
 	[self.view addSubview:browse];
@@ -43,6 +45,26 @@
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[browse][book][lookup]-|" options:0 metrics:nil views:buttons]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[browse(==book)]" options:0 metrics:nil views:buttons]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[browse(==lookup)]" options:0 metrics:nil views:buttons]];
+	
+	//add button targets
+	[browse addTarget:self action:@selector(browseButton:) forControlEvents:UIControlEventTouchUpInside];
+	[book addTarget:self action:@selector(bookButton:) forControlEvents:UIControlEventTouchUpInside];
+	[lookup addTarget:self action:@selector(lookupButton:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)browseButton:(UIButton *)sender
+{
+	[self.navigationController pushViewController:[HotelListViewController new] animated:YES];
+}
+
+-(void)bookButton:(UIButton *)sender
+{
+	
+}
+
+-(void)lookupButton:(UIButton *)sender
+{
+	
 }
 
 -(void)configureButton:(UIButton *)button title:(NSString *)title color:(UIColor *)color;
@@ -50,7 +72,7 @@
 	[button setTitle:title forState:UIControlStateNormal];
 	[button setBackgroundColor:color];
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-	[button layer].cornerRadius = 15;
+	[button layer].cornerRadius = CORNER_RADIUS;
 	[button setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 

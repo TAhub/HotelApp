@@ -22,6 +22,9 @@
 		E4E761961C0D0DA400DBC38A /* Hotels.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4E761951C0D0DA400DBC38A /* Hotels.plist */; };
 		E4E7619B1C0D104F00DBC38A /* Hotel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761981C0D104F00DBC38A /* Hotel+CoreDataProperties.m */; };
 		E4E7619C1C0D104F00DBC38A /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E7619A1C0D104F00DBC38A /* Hotel.m */; };
+		E4E7619F1C0D145C00DBC38A /* HotelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E7619E1C0D145C00DBC38A /* HotelListViewController.m */; };
+		E4E761A31C0D1B1200DBC38A /* CustomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761A21C0D1B1200DBC38A /* CustomListViewController.m */; };
+		E4E761A61C0D202E00DBC38A /* RoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761A51C0D202E00DBC38A /* RoomsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,13 @@
 		E4E761981C0D104F00DBC38A /* Hotel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Hotel+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E4E761991C0D104F00DBC38A /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
 		E4E7619A1C0D104F00DBC38A /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
+		E4E7619D1C0D145C00DBC38A /* HotelListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelListViewController.h; sourceTree = "<group>"; };
+		E4E7619E1C0D145C00DBC38A /* HotelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelListViewController.m; sourceTree = "<group>"; };
+		E4E761A01C0D1A8900DBC38A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E4E761A11C0D1B1200DBC38A /* CustomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomListViewController.h; sourceTree = "<group>"; };
+		E4E761A21C0D1B1200DBC38A /* CustomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomListViewController.m; sourceTree = "<group>"; };
+		E4E761A41C0D202100DBC38A /* RoomsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoomsListViewController.h; sourceTree = "<group>"; };
+		E4E761A51C0D202E00DBC38A /* RoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,13 @@
 		E4E761781C0CF12800DBC38A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E4E761A01C0D1A8900DBC38A /* Constants.h */,
+				E4E761A11C0D1B1200DBC38A /* CustomListViewController.h */,
+				E4E761A21C0D1B1200DBC38A /* CustomListViewController.m */,
+				E4E761A41C0D202100DBC38A /* RoomsListViewController.h */,
+				E4E761A51C0D202E00DBC38A /* RoomsListViewController.m */,
+				E4E7619D1C0D145C00DBC38A /* HotelListViewController.h */,
+				E4E7619E1C0D145C00DBC38A /* HotelListViewController.m */,
 				E4E7617A1C0CF7FD00DBC38A /* MainMenuViewController.h */,
 				E4E7617B1C0CF7FD00DBC38A /* MainMenuViewController.m */,
 				E4E761611C0CF05600DBC38A /* AppDelegate.h */,
@@ -215,7 +232,10 @@
 				E4E761631C0CF05600DBC38A /* AppDelegate.m in Sources */,
 				E4E7619B1C0D104F00DBC38A /* Hotel+CoreDataProperties.m in Sources */,
 				E4E7619C1C0D104F00DBC38A /* Hotel.m in Sources */,
+				E4E761A31C0D1B1200DBC38A /* CustomListViewController.m in Sources */,
+				E4E761A61C0D202E00DBC38A /* RoomsListViewController.m in Sources */,
 				E4E761941C0D0B8B00DBC38A /* Room.m in Sources */,
+				E4E7619F1C0D145C00DBC38A /* HotelListViewController.m in Sources */,
 				E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */,
 				E4E761921C0D0B8B00DBC38A /* Guest.m in Sources */,
 				E4E7618D1C0D0B8B00DBC38A /* Reservation+CoreDataProperties.m in Sources */,

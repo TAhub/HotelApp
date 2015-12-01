@@ -4,7 +4,7 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="reservations" toMany="YES" deletionRule="Nullify" destinationEntity="Reservation" inverseName="guest" inverseEntity="Reservation" syncable="YES"/>
     </entity>
-    <entity name="Hotel" representedClassName="Hotel" isAbstract="YES" syncable="YES">
+    <entity name="Hotel" representedClassName="Hotel" syncable="YES">
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="stars" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>

@@ -19,6 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	
+	[self initialDatabaseConfig];
+	
 	//set up the window
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	self.window.backgroundColor = [UIColor whiteColor];
@@ -31,7 +34,6 @@
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:root];
 	nav.navigationBarHidden = true;
 	self.window.rootViewController = nav;
-	
 	
 	return YES;
 }
