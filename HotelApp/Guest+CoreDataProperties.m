@@ -14,5 +14,6 @@
 @implementation Guest (CoreDataProperties)
 
 @dynamic name;
+@dynamic reservation;
 
 @end

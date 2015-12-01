@@ -10,6 +10,7 @@
 #import "Room.h"
 #import "Reservation.h"
 #import "Constants.h"
+#import "BookSignViewController.h"
 
 @interface BookRoomDetailViewController ()
 
@@ -19,6 +20,8 @@
 @end
 
 @implementation BookRoomDetailViewController
+
+#pragma mark - setup
 
 -(void)loadView
 {
@@ -39,8 +42,6 @@
 	
 	//configure the contents
 	NSDate *startOfToday = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
-	
-	
 	[self configureButton:backButton title:@"Back" color:BOOK_COLOR];
 	[self configureButton:bookButton title:@"Book" color:BOOK_COLOR];
 	[self configureButton:availButton title:@"First Opening" color:BOOK_COLOR];
@@ -77,8 +78,8 @@
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[start]-|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[end]-|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[backButton]-|" options:0 metrics:nil views:views]];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[startLabel][start][endLabel][end][bookButton][spacer][backButton]-|" options:0 metrics:nil views:views]];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[startLabel][start][endLabel][end][availButton][spacer][backButton]-|" options:0 metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[startLabel][start][endLabel][end][bookButton][spacer][backButton]-|" options:0 metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[startLabel][start][endLabel][end][availButton][spacer][backButton]-|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[startLabel(==endLabel)]" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[bookButton(==availButton)]" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[bookButton][availButton]-|" options:0 metrics:nil views:views]];
@@ -105,6 +106,8 @@
 	[button setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 
+#pragma mark - selectors
+
 -(void) startSet
 {
 	if ([self.endTime.date compare:self.startTime.date] == NSOrderedAscending)
@@ -129,26 +132,20 @@
 	Reservation *res = [self availabilityCheck:self.startTime.date end:self.endTime.date];
 	if (res == nil)
 	{
-		//TODO: go on to the next step
+		BookSignViewController *vc = [BookSignViewController new];
+		vc.room = self.room;
+		vc.startDate = self.startTime.date;
+		vc.endDate = self.endTime.date;
+		
+		[self.navigationController pushViewController:vc animated:YES];
 	}
 	else
 	{
 		//you were blocked by a reservation
-		[self warning:@"Not available!" body:[NSString stringWithFormat:@"That room is booked between %@ and %@!", res.startTime, res.endTime]];
+		NSDateFormatter *format = [NSDateFormatter new];
+		format.dateFormat = @"dd MMM, YYYY";
+		[self warning:@"Not available!" body:[NSString stringWithFormat:@"That room is booked between %@ and %@!", [format stringFromDate:res.startTime], [format stringFromDate:res.endTime]]];
 	}
-}
-
--(Reservation *) availabilityCheck:(NSDate *)start end:(NSDate *)end
-{
-	for (Reservation *res in self.room.reservations)
-	{
-		if ([res.endTime compare:start] != NSOrderedAscending || //if the reservation doesn't end before you start
-			[res.startTime compare:end] != NSOrderedDescending) //if the reservation doesn't start after you end
-		{
-			return res;
-		}
-	}
-	return nil;
 }
 
 -(void) availButton:(UIButton *)sender
@@ -193,6 +190,13 @@
 	}
 }
 
+-(void) backButton:(UIButton *)sender
+{
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - helpers
+
 -(void) warning:(NSString *)message body:(NSString *)body
 {
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:body preferredStyle:UIAlertControllerStyleAlert];
@@ -202,9 +206,17 @@
 	[self presentViewController:alert animated:YES completion:nil];
 }
 
--(void) backButton:(UIButton *)sender
+-(Reservation *) availabilityCheck:(NSDate *)start end:(NSDate *)end
 {
-	[self.navigationController popViewControllerAnimated:YES];
+	for (Reservation *res in self.room.reservations)
+	{
+		if ([res.endTime compare:start] != NSOrderedAscending || //if the reservation doesn't end before you start
+			[res.startTime compare:end] != NSOrderedDescending) //if the reservation doesn't start after you end
+		{
+			return res;
+		}
+	}
+	return nil;
 }
 
 @end

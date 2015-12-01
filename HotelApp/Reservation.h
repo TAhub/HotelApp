@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Room, Guest;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Reservation : NSManagedObject
