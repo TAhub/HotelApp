@@ -2,7 +2,7 @@
 //  Guest+CoreDataProperties.m
 //  HotelApp
 //
-//  Created by Theodore Abshire on 11/30/15.
+//  Created by Theodore Abshire on 12/1/15.
 //  Copyright © 2015 TheodoreAbshire. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,6 +14,5 @@
 @implementation Guest (CoreDataProperties)
 
 @dynamic name;
-@dynamic reservations;
 
 @end

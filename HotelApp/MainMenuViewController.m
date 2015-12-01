@@ -14,8 +14,6 @@
 
 @interface MainMenuViewController ()
 
--(void)configureButton:(UIButton *)button title:(NSString *)title color:(UIColor *)color;
-
 @end
 
 @implementation MainMenuViewController
