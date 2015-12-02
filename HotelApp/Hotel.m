@@ -8,15 +8,14 @@
 
 #import "Hotel.h"
 #import "Room.h"
-#import "AppDelegate.h"
+#import "CoreDataStack.h"
 
 @implementation Hotel
 
 + (NSArray *) getHotels
 {
 	//retrieve data from coredata
-	AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-	NSManagedObjectContext *context = delegate.stack.managedObjectContext;
+	NSManagedObjectContext *context = [CoreDataStack sharedStack].managedObjectContext;
 	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
 	
 	NSError *fetchError;

@@ -17,4 +17,6 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
++ (CoreDataStack *)sharedStack;
+
 @end

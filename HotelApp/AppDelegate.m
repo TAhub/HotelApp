@@ -10,23 +10,13 @@
 #import "MainMenuViewController.h"
 #import "Hotel.h"
 #import "Room.h"
+#import "CoreDataStack.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
-@synthesize stack = _stack;
--(CoreDataStack *)stack
-{
-	// The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
-	if (_stack != nil) {
-		return _stack;
-	}
-	_stack = [CoreDataStack new];
-	return _stack;
-}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -54,7 +44,7 @@
 	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
 	
 	NSError *error;
-	NSInteger count = [self.stack.managedObjectContext countForFetchRequest:request error:&error];
+	NSInteger count = [[CoreDataStack sharedStack].managedObjectContext countForFetchRequest:request error:&error];
 	
 	if (count == 0)
 	{
@@ -64,7 +54,7 @@
 		
 		for (id name in dict)
 		{
-			Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.stack.managedObjectContext];
+			Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:[CoreDataStack sharedStack].managedObjectContext];
 			NSDictionary *hotelDict = dict[name];
 			
 			hotel.name = name;
@@ -74,7 +64,7 @@
 			NSArray *rooms = hotelDict[@"rooms"];
 			for (int i = 0; i < rooms.count; i++)
 			{
-				Room *room = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.stack.managedObjectContext];
+				Room *room = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:[CoreDataStack sharedStack].managedObjectContext];
 				NSDictionary *roomDict = rooms[i];
 				
 				room.name = roomDict[@"name"];
@@ -87,7 +77,7 @@
 		
 		//save the data
 		NSError *saveError;
-		BOOL isSaved = [self.stack.managedObjectContext save:&saveError];
+		BOOL isSaved = [[CoreDataStack sharedStack].managedObjectContext save:&saveError];
 		if (isSaved)
 			NSLog(@"Saved default data.");
 		else
@@ -116,7 +106,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	// Saves changes in the application's managed object context before the application terminates.
-//	[self saveContext];
-	[self.stack saveContext];
+	[[CoreDataStack sharedStack] saveContext];
 }
 @end

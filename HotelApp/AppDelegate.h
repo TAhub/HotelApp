@@ -21,7 +21,5 @@
 //- (void)saveContext;
 //- (NSURL *)applicationDocumentsDirectory;
 
-@property (readonly, strong, nonatomic) CoreDataStack *stack;
-
 @end
 

@@ -8,7 +8,7 @@
 
 #import "Reservation.h"
 #import "Room.h"
-#import "AppDelegate.h"
+#import "CoreDataStack.h"
 #import "Guest.h"
 
 @implementation Reservation
@@ -16,14 +16,13 @@
 + (void) makeReservationForRoom:(Room *)room startTime:(NSDate *)startTime endTime:(NSDate *)endTime guestName:(NSString *)guestName
 {
 	//sanity check
-	if (![Room available:room startTime:startTime endTime:endTime])
+	if ([Room intersection:room startTime:startTime endTime:endTime] != nil)
 	{
 		return;
 	}
 	
 	//add it
-	AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-	NSManagedObjectContext *context = delegate.stack.managedObjectContext;
+	NSManagedObjectContext *context = [CoreDataStack sharedStack].managedObjectContext;
 	Reservation *res = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
 	Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:context];
 	

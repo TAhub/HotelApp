@@ -10,6 +10,19 @@
 
 @implementation CoreDataStack
 
++(CoreDataStack *)sharedStack
+{
+	static CoreDataStack *shared = nil;
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^
+	{
+		shared = [self new];
+	});
+	return shared;
+}
+
+
+
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
