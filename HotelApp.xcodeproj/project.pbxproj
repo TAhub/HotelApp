@@ -11,6 +11,7 @@
 		E42A55BA1C0E42BE00E3164E /* BookRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A55B91C0E42BE00E3164E /* BookRoomViewController.m */; };
 		E42A55BE1C0E444B00E3164E /* BookRoomDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A55BD1C0E444B00E3164E /* BookRoomDetailViewController.m */; };
 		E42A55C11C0E56DB00E3164E /* BookSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A55C01C0E56DB00E3164E /* BookSignViewController.m */; };
+		E45960FF1C0F9C6D003ED614 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = E45960FE1C0F9C6D003ED614 /* CoreDataStack.m */; };
 		E4E761601C0CF05600DBC38A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E7615F1C0CF05600DBC38A /* main.m */; };
 		E4E761631C0CF05600DBC38A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761621C0CF05600DBC38A /* AppDelegate.m */; };
 		E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */; };
@@ -40,6 +41,8 @@
 		E42A55BD1C0E444B00E3164E /* BookRoomDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRoomDetailViewController.m; sourceTree = "<group>"; };
 		E42A55BF1C0E56DB00E3164E /* BookSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSignViewController.h; sourceTree = "<group>"; };
 		E42A55C01C0E56DB00E3164E /* BookSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSignViewController.m; sourceTree = "<group>"; };
+		E45960FE1C0F9C6D003ED614 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		E45961001C0F9C77003ED614 /* CoreDataStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		E4E7615B1C0CF05600DBC38A /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E7615F1C0CF05600DBC38A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4E761611C0CF05600DBC38A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				E4E7618B1C0D0B8B00DBC38A /* Room.h */,
 				E4E7618C1C0D0B8B00DBC38A /* Room.m */,
 				E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */,
+				E45961001C0F9C77003ED614 /* CoreDataStack.h */,
+				E45960FE1C0F9C6D003ED614 /* CoreDataStack.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				E4E7619F1C0D145C00DBC38A /* HotelListViewController.m in Sources */,
 				E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */,
 				E42A55B71C0E405E00E3164E /* CustomListViewControllerWithHotel.m in Sources */,
+				E45960FF1C0F9C6D003ED614 /* CoreDataStack.m in Sources */,
 				E4E761921C0D0B8B00DBC38A /* Guest.m in Sources */,
 				E4E7618D1C0D0B8B00DBC38A /* Reservation+CoreDataProperties.m in Sources */,
 				E42A55BA1C0E42BE00E3164E /* BookRoomViewController.m in Sources */,

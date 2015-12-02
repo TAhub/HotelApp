@@ -104,7 +104,8 @@
 	{
 		//add it
 		AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-		NSManagedObjectContext *context = delegate.managedObjectContext;
+//		NSManagedObjectContext *context = delegate.managedObjectContext;
+		NSManagedObjectContext *context = delegate.stack.managedObjectContext;
 		Reservation *res = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
 		Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:context];
 		
