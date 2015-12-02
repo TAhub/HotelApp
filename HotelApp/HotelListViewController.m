@@ -25,7 +25,6 @@
 	{
 		//retrieve data from coredata
 		AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-//		NSManagedObjectContext *context = delegate.managedObjectContext;
 		NSManagedObjectContext *context = delegate.stack.managedObjectContext;
 		NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
 
