@@ -8,9 +8,25 @@
 
 #import "Hotel.h"
 #import "Room.h"
+#import "AppDelegate.h"
 
 @implementation Hotel
 
-// Insert code here to add functionality to your managed object subclass
++ (NSArray *) getHotels
+{
+	//retrieve data from coredata
+	AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
+	NSManagedObjectContext *context = delegate.stack.managedObjectContext;
+	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+	
+	NSError *fetchError;
+	NSArray *d = [context executeFetchRequest:request error:&fetchError];
+	if (fetchError)
+	{
+		NSLog(@"Error fetching hotel data!");
+	}
+	
+	return d;
+}
 
 @end

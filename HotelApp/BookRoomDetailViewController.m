@@ -129,7 +129,7 @@
 -(void) bookButton:(UIButton *)sender
 {
 	//check availability
-	Reservation *res = [self availabilityCheck:self.startTime.date end:self.endTime.date];
+	Reservation *res = [Room intersection:self.room startTime:self.startTime.date endTime:self.endTime.date];
 	if (res == nil)
 	{
 		BookSignViewController *vc = [BookSignViewController new];
@@ -157,7 +157,7 @@
 	
 	while ([dateOn compare:self.endTime.date] != NSOrderedDescending)
 	{
-		if ([self availabilityCheck:dateOn end:dateOn] == nil)
+		if ([Room intersection:self.room startTime:dateOn endTime:dateOn] == nil)
 		{
 			if (startDate == nil)
 			{
@@ -204,36 +204,6 @@
 	UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Sorry" style:UIAlertActionStyleCancel handler:nil];
 	[alert addAction:okay];
 	[self presentViewController:alert animated:YES completion:nil];
-}
-
--(Reservation *) availabilityCheck:(NSDate *)start end:(NSDate *)end
-{
-	for (Reservation *res in self.room.reservations)
-	{
-		if ([self date:start isBetweenDate:res.startTime andDate:res.endTime] ||
-			[self date:end isBetweenDate:res.startTime andDate:res.endTime])
-		{
-			return res;
-		}
-	}
-	return nil;
-}
-
-- (BOOL)date:(NSDate*)date isBetweenDate:(NSDate*)beginDate andDate:(NSDate*)endDate
-{
-	//thanks to
-	//http://stackoverflow.com/questions/1072848/how-to-check-if-an-nsdate-occurs-between-two-other-nsdates
-	//because I got really confused using the array-sort compare to figure out if one date was before another
-	//which is, uh, not what it's supposed to do
-	//but that seems to be the only easy way to compare...
-	
-	if ([date compare:beginDate] == NSOrderedAscending)
-	return NO;
-
-	if ([date compare:endDate] == NSOrderedDescending)
-	return NO;
-
-	return YES;
 }
 
 @end

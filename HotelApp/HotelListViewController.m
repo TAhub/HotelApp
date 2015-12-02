@@ -23,19 +23,7 @@
 	
 	self.fetchData = ^NSArray*(void)
 	{
-		//retrieve data from coredata
-		AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-		NSManagedObjectContext *context = delegate.stack.managedObjectContext;
-		NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
-
-		NSError *fetchError;
-		NSArray *d = [context executeFetchRequest:request error:&fetchError];
-		if (fetchError)
-		{
-			NSLog(@"Error fetching hotel data!");
-		}
-		
-		return d;
+		return [Hotel getHotels];
 	};
 	
 	__weak typeof(self) weakSelf = self;

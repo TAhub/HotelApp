@@ -102,25 +102,8 @@
 {
 	if (self.field.text != nil && self.field.text.length > 0)
 	{
-		//add it
-		AppDelegate *delegate = (AppDelegate *)([UIApplication sharedApplication].delegate);
-		NSManagedObjectContext *context = delegate.stack.managedObjectContext;
-		Reservation *res = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:context];
-		Guest *guest = [NSEntityDescription insertNewObjectForEntityForName:@"Guest" inManagedObjectContext:context];
-		
-		res.guest = guest;
-		res.startTime = self.startDate;
-		res.endTime = self.endDate;
-		guest.name = self.field.text;
-		self.room.reservations = [self.room.reservations setByAddingObject:res];
-		
-		NSError *saveError;
-		
-		BOOL isSaved = [context save:&saveError];
-		if (isSaved)
-			NSLog(@"Saved reservation.");
-		else
-			NSLog(@"Failed to save reservation.");
+		//make the reservation
+		[Reservation makeReservationForRoom:self.room startTime:self.startDate endTime:self.endDate guestName:self.field.text];
 		
 		//and pop way back
 		[self.navigationController popToRootViewControllerAnimated:YES];
