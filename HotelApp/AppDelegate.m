@@ -11,6 +11,9 @@
 #import "Hotel.h"
 #import "Room.h"
 #import "CoreDataStack.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -35,6 +38,9 @@
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:root];
 	nav.navigationBarHidden = true;
 	self.window.rootViewController = nav;
+	
+	//load crash analytics
+	[Fabric with:@[[Crashlytics class]]];
 	
 	return YES;
 }
