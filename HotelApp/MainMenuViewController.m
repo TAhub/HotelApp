@@ -11,6 +11,7 @@
 #import "RoomsListViewController.h"
 #import "Constants.h"
 #import "BookRoomViewController.h"
+#import "GuestListViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -70,7 +71,7 @@
 
 -(void)lookupButton:(UIButton *)sender
 {
-	
+	[self.navigationController pushViewController:[GuestListViewController new] animated:YES];
 }
 
 -(void)configureButton:(UIButton *)button title:(NSString *)title color:(UIColor *)color;

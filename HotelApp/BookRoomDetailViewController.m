@@ -42,9 +42,9 @@
 	
 	//configure the contents
 	NSDate *startOfToday = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
-	[self configureButton:backButton title:@"Back" color:BOOK_COLOR];
-	[self configureButton:bookButton title:@"Book" color:BOOK_COLOR];
-	[self configureButton:availButton title:@"First Opening" color:BOOK_COLOR];
+	[self configureButton:backButton title:@"Back"];
+	[self configureButton:bookButton title:@"Book"];
+	[self configureButton:availButton title:@"First Opening"];
 	[start setDate:startOfToday];
 	[start setDatePickerMode:UIDatePickerModeDate];
 	[start setMinimumDate:startOfToday];
@@ -97,10 +97,10 @@
 	[availButton addTarget:self action:@selector(availButton:) forControlEvents:UIControlEventTouchUpInside];
 }
 
--(void)configureButton:(UIButton *)button title:(NSString *)title color:(UIColor *)color;
+-(void)configureButton:(UIButton *)button title:(NSString *)title
 {
 	[button setTitle:title forState:UIControlStateNormal];
-	[button setBackgroundColor:color];
+	[button setBackgroundColor:BOOK_COLOR];
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 	[button layer].cornerRadius = CORNER_RADIUS;
 	[button setTranslatesAutoresizingMaskIntoConstraints:NO];

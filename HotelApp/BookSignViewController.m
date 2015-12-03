@@ -42,8 +42,8 @@
 	UITextField *field = [UITextField new];
 	
 	//configure the contents
-	[self configureButton:backButton title:@"Back" color:BOOK_COLOR];
-	[self configureButton:commitButton title:@"DO IT" color:BOOK_COLOR];
+	[self configureButton:backButton title:@"Back"];
+	[self configureButton:commitButton title:@"DO IT"];
 	label.text = [NSString stringWithFormat:@"Book room for $%i?", self.price];
 	label.textAlignment = NSTextAlignmentCenter;
 	label.translatesAutoresizingMaskIntoConstraints = false;
@@ -76,10 +76,10 @@
 	field.delegate = self;
 }
 
--(void)configureButton:(UIButton *)button title:(NSString *)title color:(UIColor *)color;
+-(void)configureButton:(UIButton *)button title:(NSString *)title
 {
 	[button setTitle:title forState:UIControlStateNormal];
-	[button setBackgroundColor:color];
+	[button setBackgroundColor:BOOK_COLOR];
 	[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 	[button layer].cornerRadius = CORNER_RADIUS;
 	[button setTranslatesAutoresizingMaskIntoConstraints:NO];

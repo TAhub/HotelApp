@@ -13,6 +13,7 @@
 		E42A55C11C0E56DB00E3164E /* BookSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42A55C01C0E56DB00E3164E /* BookSignViewController.m */; };
 		E45960FF1C0F9C6D003ED614 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = E45960FE1C0F9C6D003ED614 /* CoreDataStack.m */; };
 		E45961151C0FBCDF003ED614 /* ReservationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E45961141C0FBCDF003ED614 /* ReservationTests.m */; };
+		E45961181C0FC001003ED614 /* GuestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45961171C0FC001003ED614 /* GuestListViewController.m */; };
 		E4E761601C0CF05600DBC38A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E7615F1C0CF05600DBC38A /* main.m */; };
 		E4E761631C0CF05600DBC38A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E761621C0CF05600DBC38A /* AppDelegate.m */; };
 		E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */; };
@@ -57,6 +58,8 @@
 		E45961051C0FB5DC003ED614 /* HotelAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotelAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45961091C0FB5DC003ED614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E45961141C0FBCDF003ED614 /* ReservationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationTests.m; sourceTree = "<group>"; };
+		E45961161C0FBFF5003ED614 /* GuestListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuestListViewController.h; sourceTree = "<group>"; };
+		E45961171C0FC001003ED614 /* GuestListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestListViewController.m; sourceTree = "<group>"; };
 		E4E7615B1C0CF05600DBC38A /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E7615F1C0CF05600DBC38A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4E761611C0CF05600DBC38A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 		E42A55B41C0E3F4700E3164E /* Lookup */ = {
 			isa = PBXGroup;
 			children = (
+				E45961161C0FBFF5003ED614 /* GuestListViewController.h */,
+				E45961171C0FC001003ED614 /* GuestListViewController.m */,
 			);
 			name = Lookup;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				E4E761A31C0D1B1200DBC38A /* CustomListViewController.m in Sources */,
 				E4E761A61C0D202E00DBC38A /* RoomsListViewController.m in Sources */,
 				E42A55C11C0E56DB00E3164E /* BookSignViewController.m in Sources */,
+				E45961181C0FC001003ED614 /* GuestListViewController.m in Sources */,
 				E4E761941C0D0B8B00DBC38A /* Room.m in Sources */,
 				E4E7619F1C0D145C00DBC38A /* HotelListViewController.m in Sources */,
 				E4E7616C1C0CF05600DBC38A /* HotelApp.xcdatamodeld in Sources */,
