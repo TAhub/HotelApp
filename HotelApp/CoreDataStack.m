@@ -10,6 +10,7 @@
 
 @implementation CoreDataStack
 
+#pragma mark - singleton implementation
 +(CoreDataStack *)sharedStack
 {
 	static CoreDataStack *shared = nil;
@@ -22,7 +23,7 @@
 }
 
 
-
+#pragma mark - the actual core data stack stuff
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;

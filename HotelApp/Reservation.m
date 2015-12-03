@@ -29,8 +29,9 @@
 	res.guest = guest;
 	res.startTime = startTime;
 	res.endTime = endTime;
+	res.room = room;
 	guest.name = guestName;
-	room.reservations = [room.reservations setByAddingObject:res];
+//	room.reservations = [room.reservations setByAddingObject:res];
 	
 	NSError *saveError;
 	
