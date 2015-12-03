@@ -64,6 +64,7 @@
 		E45961171C0FC001003ED614 /* GuestListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestListViewController.m; sourceTree = "<group>"; };
 		E47213251C10E48300D8568A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		E47213261C10E48300D8568A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		E47213291C10F04000D8568A /* HotelApp BETA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "HotelApp BETA.xcdatamodel"; sourceTree = "<group>"; };
 		E4E7615B1C0CF05600DBC38A /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4E7615F1C0CF05600DBC38A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4E761611C0CF05600DBC38A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -600,9 +601,10 @@
 		E4E7616A1C0CF05600DBC38A /* HotelApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E47213291C10F04000D8568A /* HotelApp BETA.xcdatamodel */,
 				E4E7616B1C0CF05600DBC38A /* HotelApp.xcdatamodel */,
 			);
-			currentVersion = E4E7616B1C0CF05600DBC38A /* HotelApp.xcdatamodel */;
+			currentVersion = E47213291C10F04000D8568A /* HotelApp BETA.xcdatamodel */;
 			path = HotelApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
