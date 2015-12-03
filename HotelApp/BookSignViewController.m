@@ -44,15 +44,15 @@
 	UITextField *ageField = [UITextField new];
 	
 	//configure the contents
-	[self configureButton:backButton title:@"Back"];
-	[self configureButton:commitButton title:@"DO IT"];
-	label.text = [NSString stringWithFormat:@"Book room for $%i?", self.price];
+	[self configureButton:backButton title:TEXT_BACK];
+	[self configureButton:commitButton title:TEXT_DOIT];
+	label.text = [NSString stringWithFormat:TEXT_BOOKQUESTION, self.price];
 	label.textAlignment = NSTextAlignmentCenter;
 	label.translatesAutoresizingMaskIntoConstraints = false;
 	[spacer setTranslatesAutoresizingMaskIntoConstraints:NO];
-	field.placeholder = @"Your name here";
+	field.placeholder = TEXT_YOURNAMEHERE;
 	field.translatesAutoresizingMaskIntoConstraints = false;
-	[ageField setPlaceholder:@"Your age here"];
+	[ageField setPlaceholder:TEXT_YOURAGEHERE];
 	[ageField setTranslatesAutoresizingMaskIntoConstraints:NO];
 	
 	//add the views

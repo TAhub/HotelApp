@@ -29,9 +29,9 @@
 	UIButton *lookup = [UIButton new];
 	
 	//configure the buttons
-	[self configureButton:browse title:@"Browse" color:BROWSE_COLOR];
-	[self configureButton:book title:@"Book" color:BOOK_COLOR];
-	[self configureButton:lookup title:@"Look Up" color:LOOKUP_COLOR];
+	[self configureButton:browse title:TEXT_BROWSE color:BROWSE_COLOR];
+	[self configureButton:book title:TEXT_BOOK color:BOOK_COLOR];
+	[self configureButton:lookup title:TEXT_LOOKUP color:LOOKUP_COLOR];
 	
 	//add views
 	[self.view addSubview:browse];

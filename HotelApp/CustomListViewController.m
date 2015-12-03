@@ -35,7 +35,7 @@
 	UIButton *backButton = [UIButton new];
 	
 	//configure the parts
-	[backButton setTitle:@"Back" forState:UIControlStateNormal];
+	[backButton setTitle:TEXT_BACK forState:UIControlStateNormal];
 	[backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 	[backButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
 	[backButton setBackgroundColor:backColor];

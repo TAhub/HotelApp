@@ -38,10 +38,10 @@
 	UITextField *field = [UITextField new];
 	
 	//configure the parts
-	[self configureButton:backButton title:@"Back"];
+	[self configureButton:backButton title:TEXT_BACK];
 	[table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 	[table setTranslatesAutoresizingMaskIntoConstraints:NO];
-	field.placeholder = @"Guest Name Search String";
+	field.placeholder = TEXT_GUESTSEARCHPLACEHOLDER;
 	field.translatesAutoresizingMaskIntoConstraints = false;
 	
 	//add the views
@@ -141,7 +141,7 @@
 	Guest *guest = (Guest *)managedObject;
 	
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"%@, age %i, reserved %@", guest.name, guest.age.intValue, guest.reservation.room.name];
+	cell.textLabel.text = [NSString stringWithFormat:TEXT_GUESTFORMAT, guest.name, guest.age.intValue, guest.reservation.room.name];
 	
 	return cell;
 }

@@ -42,21 +42,21 @@
 	
 	//configure the contents
 	NSDate *startOfToday = [[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]];
-	[self configureButton:backButton title:@"Back"];
-	[self configureButton:bookButton title:@"Book"];
-	[self configureButton:availButton title:@"First Opening"];
+	[self configureButton:backButton title:TEXT_BACK];
+	[self configureButton:bookButton title:TEXT_BOOK];
+	[self configureButton:availButton title:TEXT_FIRSTOPENING];
 	[start setDate:startOfToday];
 	[start setDatePickerMode:UIDatePickerModeDate];
 	[start setMinimumDate:startOfToday];
 	[start setTranslatesAutoresizingMaskIntoConstraints:NO];
-	startLabel.text = @"Start time";
+	startLabel.text = TEXT_STARTTIME;
 	startLabel.textAlignment = NSTextAlignmentCenter;
 	startLabel.translatesAutoresizingMaskIntoConstraints = false;
 	[end setDate:startOfToday];
 	[end setDatePickerMode:UIDatePickerModeDate];
 	[end setMinimumDate:startOfToday];
 	[end setTranslatesAutoresizingMaskIntoConstraints:NO];
-	endLabel.text = @"End time";
+	endLabel.text = TEXT_ENDTIME;
 	endLabel.textAlignment = NSTextAlignmentCenter;
 	endLabel.translatesAutoresizingMaskIntoConstraints = false;
 	[spacer setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -144,7 +144,7 @@
 		//you were blocked by a reservation
 		NSDateFormatter *format = [NSDateFormatter new];
 		format.dateFormat = @"dd MMM, YYYY";
-		[self warning:@"Not available!" body:[NSString stringWithFormat:@"That room is booked between %@ and %@!", [format stringFromDate:res.startTime], [format stringFromDate:res.endTime]]];
+		[self warning:TEXT_NOTAVAILABLE body:[NSString stringWithFormat:TEXT_NOTAVAILABLELONG, [format stringFromDate:res.startTime], [format stringFromDate:res.endTime]]];
 	}
 }
 
@@ -186,7 +186,7 @@
 	else
 	{
 		//there were no openings in that range
-		[self warning:@"No openings!" body:@"There was not a single opening that range of time!"];
+		[self warning:TEXT_NOOPENINGS body:TEXT_NOOPENINGSLONG];
 	}
 }
 
@@ -201,7 +201,7 @@
 {
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:body preferredStyle:UIAlertControllerStyleAlert];
 	alert.view.backgroundColor = BOOK_COLOR;
-	UIAlertAction *okay = [UIAlertAction actionWithTitle:@"Sorry" style:UIAlertActionStyleCancel handler:nil];
+	UIAlertAction *okay = [UIAlertAction actionWithTitle:TEXT_SORRY style:UIAlertActionStyleCancel handler:nil];
 	[alert addAction:okay];
 	[self presentViewController:alert animated:YES completion:nil];
 }
