@@ -9,6 +9,8 @@
 #import "GuestListViewController.h"
 #import "Constants.h"
 #import "Guest.h"
+#import "Reservation.h"
+#import "Room.h"
 #import <CoreData/CoreData.h>
 #import "CoreDataStack.h"
 
@@ -138,7 +140,8 @@
 	NSManagedObject *managedObject = [self.frc objectAtIndexPath:indexPath];
 	Guest *guest = (Guest *)managedObject;
 	
-	cell.textLabel.text = guest.name;
+	
+	cell.textLabel.text = [NSString stringWithFormat:@"%@, age %i, reserved %@", guest.name, guest.age.intValue, guest.reservation.room.name];
 	
 	return cell;
 }
