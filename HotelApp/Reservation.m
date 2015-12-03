@@ -13,7 +13,7 @@
 
 @implementation Reservation
 
-+ (void) makeReservationForRoom:(Room *)room startTime:(NSDate *)startTime endTime:(NSDate *)endTime guestName:(NSString *)guestName
++ (void) makeReservationForRoom:(Room *)room startTime:(NSDate *)startTime endTime:(NSDate *)endTime guestName:(NSString *)guestName guestAge:(int) guestAge
 {
 	//sanity check
 	if ([Room intersection:room startTime:startTime endTime:endTime] != nil)
@@ -31,6 +31,7 @@
 	res.endTime = endTime;
 	res.room = room;
 	guest.name = guestName;
+	guest.age = @(guestAge);
 	
 	NSError *saveError;
 	

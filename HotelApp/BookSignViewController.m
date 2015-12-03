@@ -16,6 +16,7 @@
 
 @property int price;
 @property (weak, nonatomic) UITextField *field;
+@property (weak, nonatomic) UITextField *ageField;
 
 @end
 
@@ -40,6 +41,7 @@
 	UILabel *label = [UILabel new];
 	UIView *spacer = [UIView new];
 	UITextField *field = [UITextField new];
+	UITextField *ageField = [UITextField new];
 	
 	//configure the contents
 	[self configureButton:backButton title:@"Back"];
@@ -50,6 +52,8 @@
 	[spacer setTranslatesAutoresizingMaskIntoConstraints:NO];
 	field.placeholder = @"Your name here";
 	field.translatesAutoresizingMaskIntoConstraints = false;
+	[ageField setPlaceholder:@"Your age here"];
+	[ageField setTranslatesAutoresizingMaskIntoConstraints:NO];
 	
 	//add the views
 	[self.view addSubview:backButton];
@@ -57,14 +61,16 @@
 	[self.view addSubview:label];
 	[self.view addSubview:spacer];
 	[self.view addSubview:field];
+	[self.view addSubview:ageField];
 	
 	//add constraints
-	NSDictionary *views = NSDictionaryOfVariableBindings(backButton, commitButton, label, spacer, field);
+	NSDictionary *views = NSDictionaryOfVariableBindings(backButton, commitButton, label, spacer, field, ageField);
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[backButton]-|" options:0 metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[ageField]-|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[commitButton]-|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[label]-|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[field]-|" options:0 metrics:nil views:views]];
-	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[label][field][commitButton][spacer][backButton]-|" options:0 metrics:nil views:views]];
+	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[label]-[field]-[ageField]-[commitButton][spacer][backButton]-|" options:0 metrics:nil views:views]];
 	[self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[commitButton(==backButton)]" options:0 metrics:nil views:views]];
 	
 	//add button targets
@@ -73,7 +79,9 @@
 	
 	//set up the field
 	self.field = field;
+	self.ageField = ageField;
 	field.delegate = self;
+	ageField.delegate = self;
 }
 
 -(void)configureButton:(UIButton *)button title:(NSString *)title
@@ -100,10 +108,10 @@
 }
 -(void) commitButton:(UIButton *)sender
 {
-	if (self.field.text != nil && self.field.text.length > 0)
+	if (self.field.text != nil && self.field.text.length > 0 && self.ageField.text != nil && self.ageField.text.length > 0 && self.ageField.text.intValue > 0)
 	{
 		//make the reservation
-		[Reservation makeReservationForRoom:self.room startTime:self.startDate endTime:self.endDate guestName:self.field.text];
+		[Reservation makeReservationForRoom:self.room startTime:self.startDate endTime:self.endDate guestName:self.field.text guestAge:self.ageField.text.intValue];
 		
 		//and pop way back
 		[self.navigationController popToRootViewControllerAnimated:YES];

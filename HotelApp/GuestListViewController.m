@@ -27,6 +27,9 @@
 {
 	[super loadView];
 	
+	//add a background color
+	self.view.backgroundColor = [UIColor whiteColor];
+	
 	//make the contents
 	UITableView *table = [UITableView new];
 	UIButton *backButton = [UIButton new];

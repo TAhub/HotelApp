@@ -53,7 +53,7 @@
 - (void)testReservationAddWorks
 {
 	//add a reservation
-	[Reservation makeReservationForRoom:self.roomToCheck startTime:[NSDate date] endTime:[NSDate date] guestName:@"Person"];
+	[Reservation makeReservationForRoom:self.roomToCheck startTime:[NSDate date] endTime:[NSDate date] guestName:@"Person" guestAge: 12];
 	
 	//how many reservations are there?
 	NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Reservation"];
