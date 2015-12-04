@@ -140,8 +140,11 @@
 	NSManagedObject *managedObject = [self.frc objectAtIndexPath:indexPath];
 	Guest *guest = (Guest *)managedObject;
 	
-	
-	cell.textLabel.text = [NSString stringWithFormat:TEXT_GUESTFORMAT, guest.name, guest.age.intValue, guest.reservation.room.name];
+	NSString *name = guest.name;
+	int age = guest.age.intValue;
+	NSString *roomName = guest.reservation.room.name;
+	NSString *format = TEXT_GUESTFORMAT;
+	cell.textLabel.text = [NSString stringWithFormat:format, name, age, roomName];
 	
 	return cell;
 }
